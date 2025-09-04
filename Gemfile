@@ -48,4 +48,7 @@ group :development, :test do
 
   # RSpec for Rails testing
   gem "rspec-rails", "~> 6.0"
+
+  gem "factory_bot_rails"
+  gem "faker"
 end
