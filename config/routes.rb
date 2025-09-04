@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   get "/feeds", to: "feeds#index", as: :feeds
 
+  get "/feeds/:id", to: "feeds#show", as: :feed
+
   post "/users/:user_id/follow", to: "follows#create", as: :follow_user
   delete "/users/:user_id/unfollow", to: "follows#destroy", as: :unfollow_user
 end
