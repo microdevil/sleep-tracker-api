@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   resources :sleep_trackers
 
+  get "/feeds", to: "feeds#index", as: :feeds
+
   post "/users/:user_id/follow", to: "follows#create", as: :follow_user
   delete "/users/:user_id/unfollow", to: "follows#destroy", as: :unfollow_user
 end
