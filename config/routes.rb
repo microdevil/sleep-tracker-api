@@ -10,4 +10,7 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   resources :sleep_trackers
+
+  post "/users/:user_id/follow", to: "follows#create", as: :follow_user
+  delete "/users/:user_id/unfollow", to: "follows#destroy", as: :unfollow_user
 end

@@ -13,7 +13,7 @@ describe FollowsController, type: :request do
     it 'follows another user' do
       post "/users/#{other_user.id}/follow"
       expect(response).to have_http_status(:created)
-      expect(user.following).to include(other_user)
+  expect(user.followings).to include(other_user)
     end
 
     it 'does not follow if already following' do
@@ -28,7 +28,7 @@ describe FollowsController, type: :request do
       user.active_relationships.create(followed: other_user)
       delete "/users/#{other_user.id}/unfollow"
       expect(response).to have_http_status(:ok)
-      expect(user.following).not_to include(other_user)
+  expect(user.followings).not_to include(other_user)
     end
 
     it 'does not unfollow if not following' do
