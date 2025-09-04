@@ -48,5 +48,10 @@ RSpec.describe FeedsController, type: :controller do
         get :show, params: { id: 0 }
         expect(response).to have_http_status(:not_found)
       end
+
+      it 'uses SingleflightCache to fetch sleep trackers' do
+        expect(SingleflightCache).to receive(:fetch).and_call_original
+        get :show, params: { id: user.id }
+      end
     end
 end
