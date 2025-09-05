@@ -28,6 +28,34 @@ This API follows a standard Rails MVC pattern:
 - **Docker**: Containerized for easy deployment and local development
 
 
+
+
+## Environment Variables
+
+Before running the application, ensure the following environment variables are set (e.g., in a `.env` file or your deployment environment):
+
+
+```env
+DB_NAME=db_name
+DB_USER=db_user
+DB_PASSWORD=db_password
+DB_HOST=db_host
+DB_PORT=db_port
+DEVISE_JWT_SECRET_KEY=your_devise_jwt_secret_key
+REDIS_URL=redis://localhost:6379/0
+```
+
+- `DB_NAME` – Database name
+- `DB_USER` – Database user
+- `DB_PASSWORD` – Database password
+- `DB_HOST` – Database host
+- `DB_PORT` – Database port
+
+- `DEVISE_JWT_SECRET_KEY` – Secret key for Devise JWT authentication
+- `REDIS_URL` – Redis connection string
+
+Other variables may be required depending on your configuration (see `config/database.yml`, `config/credentials.yml.enc`, and Docker setup).
+
 ## Setup (Docker)
 
 ```bash
